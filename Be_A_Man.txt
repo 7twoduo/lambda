@@ -1,41 +1,27 @@
-3) Be a Man Submission Checklist (One Page)
+4)Be a Man Challenge Additional (For Stronger Students)
 
-Give them one generic checklist to attach to each submission:
+ “Base lab = Medium. Apply 1–3 multipliers to reach Hard/Expert.”
 
-✅ Student Submission Checklist
+Global Multipliers
+  Multi-account:
+    Separate “dev” and “prod” AWS accounts; deploy via Terraform workspaces or different state backends.
+  Multi-region:
+    Aurora Global DB, cross-region SNS, cross-region EventBridge routing.
+  Security:
+    IAM least privilege policies (no *:*).
+    WAF on API Gateway with basic rules.
+    Parameter Store / Secrets Manager, no DB creds in plaintext.
+  Observability:
+    Structured logging (JSON).
+    CloudWatch dashboards for latency, throttles, errors, DLQ counts.
+  CI/CD:
+    GitHub Actions or CodePipeline running terraform fmt, terraform validate, pytest and deploy.
 
-Architecture:
-
- All required services used: Lambda, EventBridge, Aurora, SNS/SQS (as specified in lab).
- Terraform can terraform apply without manual console changes.
- AWS resources are named with app + env (e.g., lab2-orders-dev).
-
-Lambda:
-
- Lambda code is in version control (Git repo link submitted).
- Environment variables configured via Terraform (no secrets hard-coded).
- Lambda handlers are idempotent (safe to re-run events).
-
-Aurora:
-
- Aurora cluster deployed via Terraform (no manual RDS wizard).
- Schema created via script or migration file (SQL file included).
- Connections closed properly (no runaway connection leak).
-
-Messaging:
-
- SQS queues have DLQs configured where appropriate.
- SNS topics have at least one functional subscription tested.
- EventBridge rules have event patterns documented in README.
-
-Testing:
-
- At least 5 test events executed per lab.
- Screenshots or logs included showing end-to-end flow.
- Failure path tested (bad messages, invalid input).
-
-Docs:
-
- README.md explains architecture and how to run tests.
- Simple text diagram included.
- Known limitations listed.
+Per-Lab Examples
+   Lab 1: add Rekognition + object labeling + per-user quota checks.
+   Lab 2: add idempotency keys for orders + charge simulation + refunds queue.
+   Lab 3: add inventory versioning + audit trail table.
+   Lab 4: add chaotic event injection and DLQ replay script.
+   Lab 5: add semantic caching layer in DynamoDB; add SQL query cost controls.
+   Lab 9: capture TPS and Lambda concurrency in Aurora + QuickSight graphs.
+   Lab 10: run actual failover drill and log RTO/RPO metrics.
