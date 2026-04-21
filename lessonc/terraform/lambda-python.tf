@@ -6,3 +6,5 @@ resource "aws_lambda_function" "python" {
 
   filename = "python.zip"
 }
+
+# zip python.zip lambda_function.py
