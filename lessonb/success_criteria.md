@@ -36,3 +36,11 @@ A student passes the lab when you can:
 ✔ Locate and interpret CloudWatch logs
 ✔ Explain the request flow end-to-end
 ✔ Demonstrate that the system works even with missing or altered input
+
+Remember:
+
+“If it returns 200 but you can’t explain the logs, you didn’t finish the lab.”
+
+“If you wrote code but don’t know where the logs are, you are not operating — you are guessing.”
+
+“Cloud engineers don’t trust success. They verify it.”
