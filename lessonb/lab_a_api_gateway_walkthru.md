@@ -5,7 +5,7 @@ Expose two Lambda functions through HTTP endpoints using API Gateway:
 
 /python → Python Lambda
 
-🧠 Concept Before Clicking (Say This First)
+🧠 Concept Before Clicking
 
 “Lambda does nothing until something calls it. API Gateway is how the outside world talks to your function.”
 
