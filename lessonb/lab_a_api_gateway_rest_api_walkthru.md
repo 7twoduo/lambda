@@ -12,6 +12,7 @@ Unlike HTTP API, REST API makes you define:
     Deployment → publish changes
 
 Task 1 — Create REST API
+
     📍 Navigation
     AWS Console → API Gateway
     Click Create API ---> REST API (NOT HTTP API)
@@ -19,6 +20,7 @@ Task 1 — Create REST API
     Name: chewbacca-rest-api
 
 Task 2 — Create Resources (Paths)
+
     Create /python
         Click Actions → Create Resource
         Resource Name: python
@@ -44,11 +46,13 @@ Repeat for /node
 Connect to: chewbacca-node-lambda
 
 Task 4 — Lambda Permissions
+
 “Add permission to Lambda?”
 Click: OK
 Remember: API Gateway must be allowed to invoke Lambda
 
 Task 5 — Deploy API (MOST COMMON POINT of Frustration)
+
 “If you don’t deploy, your API does not exist.”
 Click: Actions → Deploy API
 Configure:
@@ -56,9 +60,11 @@ Configure:
     Stage name: prod
 
 Task 6 — Get Invoke URL
+
 You’ll get: https://<api-id>.execute-api.<region>.amazonaws.com/prod
 
 Task 7 — Test API
+
 Chewbacca Python: curl "https://<api-id>.execute-api.<region>.amazonaws.com/prod/python?name=Chewbacca"
 Chewbacca Node:  curl "https://<api-id>.execute-api.<region>.amazonaws.com/prod/node?name=Malgus"
 
